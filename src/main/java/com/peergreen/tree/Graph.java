@@ -15,34 +15,20 @@
  */
 package com.peergreen.tree;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
- * Interface of all nodes.
- * Nodes allows to get parent and children.
- * Nodes can be visited with the help of a Visitor.
+ * Graph allowing to get multiple nodes that are not linked together.
  * @author Florent Benoit
  */
-public interface Node<T> {
+public interface Graph<T> {
 
-    /**
-     * @return data associated to this node.
-     */
-    T getData();
-
-    /**
-     * @return the parent node.
-     */
-    Node<T> getParent();
-
-    /**
-     * @return children of the nodes.
-     */
-    List<Node<T>> getChildren();
+    Collection<Node<T>> getNodes();
 
     /**
      * Walk on the nodes of this node by using a visitor.
      * @param visitor the visitor to use
      */
-    void walk(NodeVisitor<T> visitor);
+    void walk(GraphVisitor<T> visitor);
+
 }

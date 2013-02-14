@@ -14,20 +14,19 @@
 
 package com.peergreen.tree;
 
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
 import java.util.Collections;
 
-import static org.testng.Assert.assertEquals;
+import org.testng.annotations.Test;
+
+import com.peergreen.tree.node.AbsNode;
+import com.peergreen.tree.node.LazyNode;
 
 /**
- * Created with IntelliJ IDEA.
- * User: guillaume
- * Date: 29/01/13
- * Time: 11:34
- * To change this template use File | Settings | File Templates.
+ * @author Guillaume Sauthier
  */
-public class NodeTestCase {
+public class LazyNodeTestCase {
 
     @Test
     public void testSetParentLinkNodeTogether() throws Exception {
@@ -36,8 +35,8 @@ public class NodeTestCase {
         A two = new A();
         two.value = "Two";
         one.child = two;
-        Node<A> parent = new Node<A>(new Adapter(), one);
-        Node<A> child = new Node<A>(new Adapter(), two);
+        AbsNode<A> parent = new LazyNode<A>(new Adapter(), one);
+        AbsNode<A> child = new LazyNode<A>(new Adapter(), two);
 
         child.setParent(parent);
 
@@ -48,6 +47,7 @@ public class NodeTestCase {
     }
 
     private class A {
+        @SuppressWarnings("unused")
         String value;
         A child;
     }

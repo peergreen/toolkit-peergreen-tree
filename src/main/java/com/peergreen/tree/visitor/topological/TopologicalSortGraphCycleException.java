@@ -13,36 +13,25 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.peergreen.tree;
-
-import java.util.List;
+package com.peergreen.tree.visitor.topological;
 
 /**
- * Interface of all nodes.
- * Nodes allows to get parent and children.
- * Nodes can be visited with the help of a Visitor.
+ * Exception thrown where is a cycle in a graph.
  * @author Florent Benoit
  */
-public interface Node<T> {
+public class TopologicalSortGraphCycleException extends RuntimeException {
 
     /**
-     * @return data associated to this node.
+     * Serial Version UID.
      */
-    T getData();
+    private static final long serialVersionUID = 923206212952596686L;
 
     /**
-     * @return the parent node.
+     * Build a new exception.
+     * @param message the given message
      */
-    Node<T> getParent();
+    public TopologicalSortGraphCycleException(final String message) {
+        super(message);
+    }
 
-    /**
-     * @return children of the nodes.
-     */
-    List<Node<T>> getChildren();
-
-    /**
-     * Walk on the nodes of this node by using a visitor.
-     * @param visitor the visitor to use
-     */
-    void walk(NodeVisitor<T> visitor);
 }
