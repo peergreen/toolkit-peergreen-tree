@@ -16,15 +16,16 @@
 
 package com.peergreen.tree.visitor.print;
 
-import com.peergreen.tree.Node;
-import com.peergreen.tree.node.SimpleNode;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.testng.Assert.assertEquals;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.peergreen.tree.Node;
+import com.peergreen.tree.node.SimpleNode;
 
 public class TreePrettyPrintNodeVisitorTestCase {
     private ByteArrayOutputStream baos;

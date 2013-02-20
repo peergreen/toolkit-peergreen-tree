@@ -16,13 +16,13 @@
 
 package com.peergreen.tree.visitor.print;
 
-import com.peergreen.tree.Node;
-import com.peergreen.tree.NodeVisitor;
-
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import com.peergreen.tree.Node;
+import com.peergreen.tree.NodeVisitor;
 
 /**
  * Sample output:
