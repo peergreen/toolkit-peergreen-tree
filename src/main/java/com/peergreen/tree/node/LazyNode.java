@@ -25,8 +25,12 @@ import com.peergreen.tree.NodeAdapter;
 /**
  * Lazy node.
  * The node model is based on an existing node model.
- * Children are discovered in a lazy mode as soon as a visitor needs them.
- * It uses a NodeAdapter to map to the existing model.
+ * Children are discovered in a lazy mode as soon as the structure is traversed (with a
+ * {@link com.peergreen.tree.NodeVisitor} or through the Node API).
+ * It uses a {@link NodeAdapter} to map the Node structure to the underlying model.
+ *
+ * @see NodeAdapter
+ * @see com.peergreen.tree.NodeVisitor
  * @author Florent Benoit
  */
 public class LazyNode<T> extends AbsNode<T> {

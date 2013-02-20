@@ -18,8 +18,14 @@ package com.peergreen.tree;
 
 
 /**
+ * Callback invoked for each visited {@link Node when walking the structure.
  * @author Guillaume Sauthier
  */
 public interface NodeVisitor<T> {
+
+    /**
+     * Visit the given {@literal Node}.
+     * @param node visited node.
+     */
     void visit(Node<T> node);
 }

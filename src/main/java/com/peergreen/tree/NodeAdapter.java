@@ -17,12 +17,19 @@
 package com.peergreen.tree;
 
 /**
- * Created with IntelliJ IDEA.
- * User: guillaume
- * Date: 15/11/12
- * Time: 10:49
- * To change this template use File | Settings | File Templates.
+ * A {@literal NodeAdapter} have the responsibility to adapt an existing tree structure into a {@link Node}.
+ * It is only used with {@link com.peergreen.tree.node.LazyNode}.
+ *
+ * @see com.peergreen.tree.node.LazyNode
+ * @author Guillaume Sauthier
  */
 public interface NodeAdapter<T> {
+
+    /**
+     * Returns the list of children of the given instance.
+     * @param object instance with potential children.
+     * @return the children of the given object (If there are no children, an empty structure <bold>must</bold> be returned).
+     * @see java.util.Collections#emptyList()
+     */
     Iterable<T> getChildren(T object);
 }
