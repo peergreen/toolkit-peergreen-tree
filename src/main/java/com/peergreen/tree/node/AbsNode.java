@@ -16,8 +16,6 @@
 
 package com.peergreen.tree.node;
 
-import java.util.List;
-
 import com.peergreen.tree.Node;
 import com.peergreen.tree.NodeVisitor;
 
@@ -51,12 +49,6 @@ public abstract class AbsNode<T> implements Node<T> {
     public T getData() {
         return data;
     }
-
-    /**
-     * Needs to be defined by subclasses.
-     */
-    @Override
-    public abstract List<Node<T>> getChildren();
 
     @Override
     public void walk(NodeVisitor<T> visitor) {
