@@ -12,9 +12,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.peergreen</groupId>
@@ -24,7 +22,7 @@
 
   <groupId>com.peergreen.tree</groupId>
   <artifactId>peergreen-tree</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>Peergreen Tree</name>
   <description>
@@ -35,7 +33,7 @@
     <connection>scm:git:https://forge.peergreen.com/git/git/toolkit/peergreen-tree.git</connection>
     <developerConnection>scm:git:https://forge.peergreen.com/git/git/toolkit/peergreen-tree.git</developerConnection>
     <url>https://forge.peergreen.com/git/summary/?r=toolkit/peergreen-tree.git</url>
-    <tag>HEAD</tag>
+    <tag>PEEGREEN_TREE_1_0_0</tag>
   </scm>
 
   <dependencies>
@@ -60,5 +58,21 @@
       </plugin>
     </plugins>
   </build>
+
+
+  <repositories>
+    <repository>
+      <id>peergreen.release</id>
+      <name>Peergreen Release Nexus</name>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <url>https://forge.peergreen.com/nexus/content/repositories/releases/</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
 
 </project>
