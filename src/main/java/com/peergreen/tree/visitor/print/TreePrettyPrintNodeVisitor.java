@@ -103,8 +103,11 @@ public abstract class TreePrettyPrintNodeVisitor<T> implements NodeVisitor<T> {
         Iterator<? extends Node<?>> i = parent.getChildren().iterator();
 
         // Consume the Iterator until we find the current Node
+        // Need to use object identity instead of Node.equals() since by default,
+        // the equals() method delegates to the content's equals().
+        long nodeIdentity = System.identityHashCode(node);
         Node<?> child = i.next();
-        while (!node.equals(child)) {
+        while (nodeIdentity != System.identityHashCode(child)) {
             child = i.next();
         }
 

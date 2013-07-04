@@ -76,4 +76,27 @@ public class TreePrettyPrintNodeVisitorTestCase {
                           "`-- e (level 1)\n";
         assertEquals(baos.toString(), expected);
     }
+
+    @Test
+    public void testEqualNodes() throws Exception {
+        SimpleNode<String> root = new SimpleNode<>("root (level 0)");
+        SimpleNode<String> a = new SimpleNode<>("a (level 1)");
+        SimpleNode<String> b = new SimpleNode<>("a (level 1)");
+        SimpleNode<String> e = new SimpleNode<>("a (level 1)");
+
+        root.addChild(a);
+        root.addChild(b);
+        root.addChild(e);
+        a.setParent(root);
+        b.setParent(root);
+        e.setParent(root);
+
+        root.walk(visitor);
+
+        String expected = "root (level 0)\n" +
+                          "|-- a (level 1)\n" +
+                          "|-- a (level 1)\n" +
+                          "`-- a (level 1)\n";
+        assertEquals(baos.toString(), expected);
+    }
 }
