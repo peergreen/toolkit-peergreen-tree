@@ -19,6 +19,7 @@ package com.peergreen.tree.visitor.print;
 import static org.testng.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
 
 import org.testng.annotations.BeforeMethod;
@@ -30,6 +31,7 @@ import com.peergreen.tree.node.SimpleNode;
 public class TreePrettyPrintNodeVisitorTestCase {
     private ByteArrayOutputStream baos;
     private TreePrettyPrintNodeVisitor<String> visitor;
+    private String EOL = System.getProperty("line.separator");
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -68,12 +70,12 @@ public class TreePrettyPrintNodeVisitorTestCase {
 
         root.walk(visitor);
 
-        String expected = "root (level 0)\n" +
-                          "|-- a (level 1)\n" +
-                          "|-- b (level 1)\n" +
-                          "|   `-- c (level 2)\n" +
-                          "|       `-- d (level 3)\n" +
-                          "`-- e (level 1)\n";
+        String expected = "root (level 0)" + EOL +
+                          "|-- a (level 1)" + EOL +
+                          "|-- b (level 1)" + EOL +
+                          "|   `-- c (level 2)" + EOL +
+                          "|       `-- d (level 3)" + EOL +
+                          "`-- e (level 1)" + EOL;
         assertEquals(baos.toString(), expected);
     }
 
@@ -93,10 +95,10 @@ public class TreePrettyPrintNodeVisitorTestCase {
 
         root.walk(visitor);
 
-        String expected = "root (level 0)\n" +
-                          "|-- a (level 1)\n" +
-                          "|-- a (level 1)\n" +
-                          "`-- a (level 1)\n";
+        String expected = "root (level 0)" + EOL +
+                          "|-- a (level 1)" + EOL +
+                          "|-- a (level 1)" + EOL +
+                          "`-- a (level 1)" + EOL;
         assertEquals(baos.toString(), expected);
     }
 }
