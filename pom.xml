@@ -22,7 +22,7 @@
 
   <groupId>com.peergreen.tree</groupId>
   <artifactId>peergreen-tree</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
 
   <name>Peergreen Tree</name>
   <description>
@@ -33,7 +33,7 @@
     <connection>scm:git:https://forge.peergreen.com/git/git/toolkit/peergreen-tree.git</connection>
     <developerConnection>scm:git:https://forge.peergreen.com/git/git/toolkit/peergreen-tree.git</developerConnection>
     <url>https://forge.peergreen.com/git/summary/?r=toolkit/peergreen-tree.git</url>
-    <tag>HEAD</tag>
+    <tag>PEERGREEN_TREE_1_0_1</tag>
   </scm>
 
   <dependencies>
